@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+</head>
+<body>
+	<script>
+		var dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+		var lista = new Array();
+		lista["uno"] = 1;
+		lista["dos"] = 2;
+		lista["tres"] = 3;
+
+		alert("Esto está en el vector días: " + dias); 
+
+		for(i in dias) {
+			alert(dias[i]);
+		}
+
+		document.write(lista["tres"]);
+		document.write("-" + lista.tres);
+		for(i in lista) {
+			document.write("<br/>" + lista[i]);
+		}
+
+		var lista1 = {
+			'uno' : 'Soy uno cuando estoy solo',
+			'dos' : 'si tú estás conmigo',
+			'tres' : 'si somos dos y viene algún otro amigo'
+		};
+		document.write(lista1["tres"]);
+		document.write("-" + lista1.tres);
+		
+		for(var i in lista1) {
+			document.write("<br/>" + i + "-->" + lista1[i]);
+		}
+		
+	</script>
+
+</body>
+</html>

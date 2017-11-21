@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<script>
+		window.onload = function() {
+			document.getElementById("seccion").onmouseover = resalta;
+			document.getElementById("seccion").onmouseout = resalta;
+		}
+
+		function resalta(elEvento) {
+			var evento = elEvento || window.event; // Para Explorer
+			switch(evento.type) {
+				case 'mouseover':
+					this.style.borderColor = 'black';
+					break;
+				case 'mouseout':
+					this.style.borderColor = 'silver';
+					break;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="seccion" style="width: 150px; height: 60px; border: thin solid silver">
+		Sección de contenidos...
+	</div>
+
+</body>
+</html>

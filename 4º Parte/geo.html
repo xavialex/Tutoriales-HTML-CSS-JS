@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p>Pincha para saber tus coordenadas.</p>
+    <p id="demo"></p>
+    <button onclick="getLocation()">Prueba</button>
+    <div id="mapholder"></div>
+    <script>
+        var x = document.getElementById("demo");
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                x.innerHTML = " Geolocation no está soportada por este navegador.";
+            }
+        }
+
+        function showPosition(position) {
+            var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+            var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
+            +latlon+"&zoom=16&size=400x300&sensor=false";
+            alert(img_url);
+            document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+        }
+        function showError(error) {
+            if(error.code == 1) {
+                alert("Error: Access is denied!");
+            }
+
+            else if( error.code == 2) {
+                alert("Error: Position is unavailable!");
+            }
+            x.innerHTML = error;
+        }
+    </script>
+</body>
+</html>

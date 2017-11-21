@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+</head>
+<body>
+	<script>
+	var i = 0;
+		function botonea() {
+			var btn = document.createElement("BUTTON");
+			var t = document.createTextNode("CLICK nº" + i);
+			btn.appendChild(t);
+			document.body.appendChild(btn);
+			i++;
+		}
+	</script>
+	<button type="button" onclick="botonea()">Pincha</button>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Página de ejemplo</title>
+
+	<script>
+		var peticion01 = null; // Creamos la variable
+		peticion01 = new XMLHttpRequest();
+		// Función coger, en este caso le entra una dirección relativa al documento actual
+		function Coger(url) {
+			if(peticion01) { // Si tenemos el objeto peticion01
+				peticion01.open('GET', url, false);
+				// Abrimos la url, false=forma síncrona
+				peticion01.send(null); // No le enviamos datos al servidor
+				// Escribimos la respuesta en el campo con ID=resultado
+				document.getElementById('resultado').innerHTML = peticion01.responseText;
+			}
+		}
+	</script>
+</head>
+<body>
+	<!-- Cuando ocurra el evento oneclick se llamará a la función cofer -->
+	<button onclick="Coger('videoclub.xml')">Inserta el documento</button>
+	<table border="4">
+	<tr>
+		<!-- El campo con id=resultado se sustituirá `pr causa de que ese od está en la función Coger -->
+		<td><span id="resultado">Sin resultado</span></td>
+	</tr>
+	</table>
+</body>
+</html>

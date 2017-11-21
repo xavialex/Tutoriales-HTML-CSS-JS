@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Este es el título de mi web</title>
+	</head>
+
+	<body>
+		<div id="container" style="width: 500px">
+			<div id="header" style="background-color: #FFA500;">
+				<h1 style="margin-bottom: 0;">
+				T&iacute;tulo de la P&aacute;gina principal <!-- Poner tildes sin el meta -->
+				</h1>
+			</div>
+			<div id="menu" style="background-color: #FFD700; height: 200px; width: 100px; float: left;">
+				<strong>Menu</strong><br/>
+				HTML<br/>
+				CSS<br/>
+				JavaScript
+			</div>
+			<div id="content" style="background-color: #EEEEEE; height: 800px; float: left;">
+				El contenido de la página va aquí.
+				<form>
+					Nombre: <input type="text" name="nombre"/><br/>
+					Apellidos: <input type="text" name="apellidos"/><br/>
+					<input type="radio" name="sexo" value="hombre"/>Masculino<br/><!-- Sólo se puede escoger una opción -->
+					<input type="radio" name="sexo" value="mujer"/>Femenino<br/>
+				</form>
+				<form>
+					<input type="checkbox" name="vehiculo" value="bici"/>Tengo bici<br/><!-- Se pueden escoger múltiples opciones -->
+					<input type="checkbox" name="vehiculo" value="coche"/>Tengo coche<br/>
+				</form>
+				<form action="">
+					<select name="cars">
+						<option value="volvo">Volvo</option>
+						<option value="saab">Saab</option>
+						<option value="fiat">Fiat</option>
+						<option value="audi" selected="selected">Audi</option><!-- La opción selected="selected" es obligatoria en XHTML -->
+					</select>
+				</form>
+				<textarea rows="10" cols="30">Baix del pi...</textarea>
+				<fieldset>
+					<legend>Información personal:</legend>
+					Nombre: <input type="text" size="30"/><br/>
+					E-mail: <input type="text" size="30"/><br/>
+					Fecha de nacimiento: <input type="text" size="10"/><br/>
+					Cumpleaños: <input type="date" name="bday" /><br/>
+				</fieldset>
+			</div>
+			<div id="footer" style="background-color: #FFA500; clear: both; text-align: center;">
+				Copyright © Todos los derechos reservados
+			</div>
+			
+
+		</div>
+	</body>
+
+</html>

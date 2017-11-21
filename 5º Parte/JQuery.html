@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<title>Primer JQuery</title>
+
+	<script>
+		// $(document).ready(function() {
+		// 	$("button").click(function() {
+		// 		$("p").hide();
+		// 	});
+		// });
+
+		// Son equivalentes
+
+		$(function() {
+			$("button").click(function() {
+				$("p").hide();
+			});
+		});
+	</script>
+</head>
+<body>
+	<h2>Esto es una cabecera</h2>
+	<p>Esto es un párrafo</p>
+	<p>Esto es otro párrafo</p>
+	<button>Click me</button>
+</body>
+</html>

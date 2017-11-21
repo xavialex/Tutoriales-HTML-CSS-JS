@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Página de ejemplo</title>
+	<script language="JavaScript" type="text/javascript">
+		var peticion01 = null; //Creamos la variable para el objeto
+		peticion01 = new XMLHttpRequest();
+		function Coger(url) { //Función coger, en esta caso le entra una dirección relativa al documento actual.
+			if(peticion01) { //Si tenemos el objeto peticion01
+				peticion01.open('GET', url, false); //Abrimos la url,false=forma síncrona
+				peticion01.send(null); //No le enviamos datos al servidor
+			//Escribimos la respuesta en el campo con ID=resultado
+			document.getElementById('resultado').innerHTML = peticion01.responseText;
+		}
+	}
+</script>
+</head>
+<body>
+	<!--Cuando ocurra el evento onclick se llamara la función coger-->
+	<button onclick="Coger('espera.php')">Coge un documento</button>
+	<table border="4">
+		<tr>
+	<!--El campo con id=resultado se sustituirá por causa de que ese id
+	está en la función coger-->
+	<td><span id="resultado">Sin resultado</span></td>
+	<input  type="text" id="txt1"/>
+</tr>
+</table>
+</body>
+</html>

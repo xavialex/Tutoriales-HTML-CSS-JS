@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<script>
+		window.onload = function() {
+			var formulario = document.getElementById("formulario");
+			var camposInput = formulario.getElementsByTagName("input");
+
+			for(var i=0;i<camposInput.length;i++) {
+				if(camposInput[i].type == "text") {
+					camposInput[i].onmouseover = resalta; // Al llamar al manejador no se llama a la función, no hay ()
+					camposInput[i].onmouseout = resalta;
+				}
+			}
+		}
+
+		function resalta() {
+			var elemento = this;
+			switch(elemento.style.borderColor) {
+				case 'silver':
+				case 'silver silver silver silver':
+				case '#c0c0c0':
+					elemento.style.borderColor = 'black';
+					break;
+				case 'black':
+				case 'black black black black':
+				case '#000000':
+					elemento.style.borderColor = 'silver';
+					break;
+				default:
+					elemento.style.borderColor = 'silver';
+			}
+		}
+	</script>
+</head>
+<body>
+	<form id="formulario" action="#">
+		<input type="text" name="opcion1" value="1" id="opcion1">
+		<label for="opcion1">Opción 1</label><br>
+		<input type="text" name="opcion2" value="2" id="opcion2">
+		<label for="opcion2">Opción 2</label><br>
+		<input type="text" name="opcion3" value="3" id="opcion3">
+		<label for="opcion3">Opción 3</label><br>
+		<input type="text" name="opcion4" value="4" id="opcion4">
+		<label for="opcion4">Opción 4</label><br>
+		<button>Botón inútil</button>
+	</form>
+
+</body>
+</html>

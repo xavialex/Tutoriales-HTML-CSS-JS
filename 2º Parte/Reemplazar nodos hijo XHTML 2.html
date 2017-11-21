@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+</head>
+<body>
+	<a id="link" href="http://google.com">Enlace</a>
+	<button id="boton" onclick="miFuncion()">Prueba</button>
+	<script>
+		var flag = true;
+		function miFuncion() {
+			var enlace = document.getElementById("link");
+			if(flag) {
+				enlace.href="http://meristation.es";
+				document.getElementById("boton").innerHTML = "Meristation";
+			}
+			else {
+				enlace.href="http://google.es";
+				document.getElementById("boton").innerHTML = "Google";
+			}
+			flag = !flag;
+		}
+	</script>
+
+</body>
+</html>

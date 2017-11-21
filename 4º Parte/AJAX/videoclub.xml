@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VideoClub>
+	<Pelicula>
+		<Titulo>El rey Leon</Titulo>
+		<Duracion>87 Min</Duracion>
+		<Genero>Animacion infantil</Genero>
+	</Pelicula>
+	<Pelicula>
+		<Titulo>Aladin</Titulo>
+		<Duracion>86 Min</Duracion>
+		<Genero>Animacion infantil</Genero>
+	</Pelicula>
+</VideoClub>

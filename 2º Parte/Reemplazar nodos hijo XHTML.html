@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+</head>
+<body>
+	<ul id="myList"><li>Agua</li><li>Té</li><li>Café</li></ul>
+
+	<p id="demo">Haz click para reemplazar el primer elemento de la lista</p>
+
+	<button onclick="miFuncion()">Prueba</button>
+
+	<script>
+		function miFuncion() {
+			var textNode = document.createTextNode("Cerveza");
+			var item = document.getElementById("myList").childNodes[0];
+			item.replaceChild(textNode, item.childNodes[0]);
+		}
+	</script>
+
+	<a id="enlace" href="http://google.com">Enlace</a>
+	<script>
+		var enlace = document.getElementById("enlace");
+		alert(enlace.href);
+	</script>
+
+</body>
+</html>

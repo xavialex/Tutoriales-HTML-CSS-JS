@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<style>
+		.miestilo {
+			width: 300px;
+			height: 100px;
+			background-color: coral;
+			text-align: center;
+			font-size: 25px;
+		}
+		.miestilo2 {
+			width: 200px;
+			height: 200px;
+			background-color: yellow;
+			text-align: right;
+			font-size: 40px;
+		}
+	</style>
+	<title></title>
+</head>
+<body>
+	<p>Haz clic en el botón</p>
+	<div id="myDIV">
+		Soy un div	
+	</div>
+	<button onclick="myFunction()">Prueba</button>
+	<script>
+		function myFunction() {
+			if(document.getElementById("myDIV").className == "miestilo") {
+				document.getElementById("myDIV").className = "miestilo2";
+			}
+			else {
+				document.getElementById("myDIV").className = "miestilo";
+			}
+		}
+	</script>
+</body>
+</html>

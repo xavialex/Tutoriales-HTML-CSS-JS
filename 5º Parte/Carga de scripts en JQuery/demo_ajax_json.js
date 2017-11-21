@@ -1,0 +1,1 @@
+alert("Este alert lo hemos cargado con AJAX");

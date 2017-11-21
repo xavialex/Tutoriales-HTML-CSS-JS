@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+  <script>
+
+    function showCustomer(str)
+
+    {
+
+      var xmlhttp;   
+
+      if (str=="")
+
+      {
+
+        document.getElementById("txtHint").innerHTML="";
+
+        return;
+
+      }
+
+      if (window.XMLHttpRequest)
+
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+
+    xmlhttp=new XMLHttpRequest();
+
+  }
+
+  else
+
+  {// code for IE6, IE5
+
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+
+  }
+
+  xmlhttp.onreadystatechange=function()
+
+  {
+
+    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+
+    {
+
+      document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+
+    }
+
+  }
+
+  xmlhttp.open("GET","obtenercliente.php?q="+str,true);
+
+  xmlhttp.send();
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+
+
+  <form action="">
+
+    <select name="customers" onchange="showCustomer(this.value)">
+
+      <option value="">Selecciona un nombre:</option>
+
+      <option value="MICHAEL">Michael Knight</option>
+
+      <option value="MARIANO">Mariano Naniano</option>
+
+      <option value="JOHNNY">Johnny Weissmuler</option>
+
+    </select>
+
+  </form>
+
+  <br>
+
+  <div id="txtHint">La información del cliente se mostrará aquí...</div>
+
+
+
+</body>
+
+</html>

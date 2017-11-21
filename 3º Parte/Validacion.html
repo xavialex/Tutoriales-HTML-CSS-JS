@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Ejercicio Validación</title>
+
+	<script type="text/javascript">
+		function validacion() {
+			var campoTexto = document.getElementById("texto");
+			if(campoTexto.value.length > 0) {
+				alert("Se ha validado correctamente. Había algo que enviar");
+				return true;
+			}
+			else {
+				document.getElementById("error").innerHTML = "<strong>Alma de cántaro, esto es un campo obligatorio</strong>";
+				return false;
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+	<form onsubmit="return validacion()">
+		<textarea id="texto" maxlength="32"></textarea>
+		<span id="error">Introduce un valor aquí</span>
+		<br/>
+		<input type="submit" id="enviar" value="Enviar"/>
+		<input title="Se necesita un nombre" type="text" name="nombre" required /> <!-- Característica de HTML5 (En XHTMLestá prohibido, todo campo debe ser inicializado, required="required") -->
+	</form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Carga de datos</title>
+</head>
+
+<script language="javascript">
+    function crearAjax()
+    {
+        var xmlhttp=false;
+        xmlhttp = new XMLHttpRequest();
+        return xmlhttp;
+    }
+
+
+    function Contenido()
+    {
+        var contenedor;
+        contenedor = document.getElementById('content');
+
+    // creamos un nuevo objeto ajax
+    ajax=crearAjax();
+
+    //cargar el archivo html por el método GET
+    ajax.open("GET", "ej_ajax.html",true);
+
+    ajax.onreadystatechange=function()
+    {
+        if (ajax.readyState==4) // Readystate 4 significa que ya acabó de cargarlo
+        {
+            contenedor.innerHTML = ajax.responseText;
+        }
+    }
+    ajax.send(null)
+}
+
+</script>
+
+<style type="text/css">
+    #content{
+        border: 1px solid #336699;
+        padding: 10px;
+        margin: 14px;
+    }
+</style>
+<body>
+
+    Cargaremos la página <a href="ej_ajax.html" onclick="Contenido(); return false;">ej_ajax.html</a> en el siguiente div:
+
+    <div id="content"></div>
+
+</body>
+</html>

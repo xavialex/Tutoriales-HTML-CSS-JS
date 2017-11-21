@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+</head>
+<body onclick="myFunction(event)">
+	<p>Clica en cualquier elemento de la web para averiguar cuál activa el evento</p>
+	<h1>Esto es una cabecera</h1>
+	<button>Esto es un botón</button>
+	<span>Un elemento span</span>
+	<p id="demo"></p>
+	<script>
+		function myFunction(event) {
+			var x = event.target;
+			document.getElementById("demo").innerHTML = "Generado por un elemento " + x.tagName;
+		}
+	</script>
+</body>
+</html>

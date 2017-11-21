@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Calculadora del IVA</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script type="text/javascript" src="iva.js"></script>
+</head>
+<body>
+	<div id="content">
+		<h1>Calculadora del IVA</h1>
+		<p>Introduce un valor y pulsa "Calcular".</p>
+		<div id="calculadora_iva">
+			<label for="subtotal">Subtotal:</label>
+			<input type="text" id="subtotal"/><br/>
+			<label for="porcentaje_iva">% IVA:</label>
+			<input type="text" id="porcentaje_iva"/> %<br/>
+			<label for="total"> Total:</label>
+			<input type="text" id="total" disabled="disabled"/><br/>
+			<label for="iva_venta">IVA:</label>
+			<input type="text" id="iva_venta" disabled="disabled"/><br/>
+			<label>&nbsp;</label>
+			<input type="button" id="calcular" value="Calcular"/><br/>
+		</div>
+	</div>
+</body>
+</html>

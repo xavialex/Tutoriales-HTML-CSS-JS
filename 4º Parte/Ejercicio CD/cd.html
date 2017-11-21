@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Página de ejemplo</title>
+
+	<script>
+		function loadXMLDoc() {
+			var xmlhttp;
+			var txt, x, i;
+			xmlhttp = new XMLHttpRequest();
+
+/*			xmlhttp.onreadystatechange = function() { // Muestra todos los artistas
+				if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+					xmlDoc = xmlhttp.responseXML;
+					alert(xmlhttp.responseXML);
+					txt = "";
+					x = xmlDoc.getElementsByTagName("ARTIST");
+					for(i=0;i<x.length;i++) {
+						txt = txt + x[i].childNodes[0].nodeValue + "<br/>"
+					}
+					document.getElementById("myDiv").innerHTML = txt;
+				}
+			}*/
+
+			xmlhttp.onreadystatechange = function() { // Muestra todos los títulos de CD
+				if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+					xmlDoc = xmlhttp.responseXML;
+					txt = "";
+					var cds = xmlDoc.getElementsByTagName("CD");
+					for(j=0;j<cds.length;j++) {
+						x = cds[j].childNodes;
+						y = cds[j].firstChild; // x[0]
+						for(i=0;i<x.length;i++) {
+							if(y.nodeType==1) {
+								/* Los nodos Elemento son los ELEMENT_NODE 1
+								 * tenemos retornos de carro entre las etiquetas y por eso necesitamos poner el if
+								*/
+								txt += y.nodeName + ":" + y.childNodes[0].nodeValue + "<br/>";
+							}
+							y = y.nextSibling; // y =x[i+1]
+						}
+						txt += "<br/>Siguiente Disco<br/><br/>";
+					}
+					document.getElementById("myDiv").innerHTML = txt;
+				}
+			}
+			xmlhttp.open('GET', 'cd_catalog.xml', true);
+			xmlhttp.send();
+		}
+	</script>
+</head>
+<body>
+	<h2>Colección de CD's:</h2>
+	<div id="myDiv"></div>
+	<button type="button" onclick="loadXMLDoc()">Descubre mi Colección de CD's</button>
+</body>
+</html>

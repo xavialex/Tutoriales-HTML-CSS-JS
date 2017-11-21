@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+
+	<script>
+		function miFuncion(x) {
+			return this.numero + x;
+		}
+
+		var elObjeto = new Object();
+		elObjeto.numero = 5;
+		var resultado = miFuncion.call(elObjeto, 4);
+		// call sirve para usar como método de un objeto una función que no tiene implementada
+		alert(resultado);
+	</script>
+</head>
+<body>
+	
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Página de ejemplo</title>
+
+	<script>
+		function descargaArchivo() {
+			peticion_http = new XMLHttpRequest();
+
+			// Preparar la función de respuesta
+			// el uso que hacemos en este ejermplo es un poco estúpido, ya lo
+			// mejoraremos más adelante
+
+			peticion_http.onreadystatechange = muestraContenido;
+			// Realizar petición HTTP
+			peticion_http.open('GET', 'holamundo.txt', true);
+			// Abrimos la url, true=forma asíncrona
+			peticion_http.send(null);
+
+			function muestraContenido() {
+				if(peticion_http.readyState == 4) {
+					/* Posibles valores de readyState
+					 * 0 - Sin inicializar
+					 * 1 - Abierto (acaba de llamar open)
+					 * 2 - Enviado
+					 * 3 - Recibiendo
+					 * 4 - A punto */
+					if(peticion_http.status == 200) {
+						alert(peticion_http.responseText)
+					}
+				}
+			}
+		}
+		window.onload = descargaArchivo;
+	</script>
+</head>
+<body>
+
+</body>
+</html>

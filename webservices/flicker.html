@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="flicker.js" type="text/javascript"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Ajax getJSON Flickr Web Service</h1>
+  
+  <!--#buscador -->
+  <fieldset>
+    <legend>Buscador de imágenes en Flickr</legend>
+    <div id="search">
+      <label for="tags">Tags: </label>
+      <input type="text" name="tags" value="" />
+      <input type="submit" value="Buscar" />
+      <span> </span><img src="./ajax-loader.gif" id="loading" style="display:none;" />
+    </div>
+  </fieldset>
+  
+  <!--#resultado -->
+  <fieldset>
+    <legend>Resultados para: <span id="tagsToSearch"></span></legend>
+    <div id="images">
+    </div>
+  </fieldset>
+    </body>
+</html>

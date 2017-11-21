@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+</head>
+<body>
+	<p>Hello World!</p>
+	<p>El DOM es muy útil</p>
+	<p>Este ejemplo explica el método <strong>getElementsByTagName</strong></p>
+
+	<script>
+		var y = document.getElementsByTagName("p");
+		alert('El primer párrafo es ' + y[0].innerHTML);
+	</script>
+
+	Cats:
+	<input name="x" type="radio" value="Cats">
+	Dogs:
+	<input name="x" type="radio" value="Dogs">
+
+	<script>
+		var x = document.getElementsByName("x");
+		alert('Elementos con nombre x: ' + x.length);
+	</script>
+
+	<br/>
+	<a href="/">Home</a>
+	<div id="links">
+		<a href="http://google.com">Google</a>
+		<a href="http://ubuntu.com">Ubuntu</a>
+		<a href="http://debian.org">Debian</a>
+	</div>
+
+	<script>
+		function cambiarColor() {
+			// Obtenemos el elemento con id="links"
+			var e1 = document.getElementById("links");
+			// Ahora obtenemos todos los elementos con tag a que hay dentro del elemento 'e1'
+			var as = e1.getElementsByTagName("a");
+			// Y finalmente recorremos el array de elementos para cambiarles el color a cada uno
+			for(var i=0;i<as.length;i++) {
+				as[i].style.color = '#000'; // Negro
+			}
+		}
+	</script>
+	<button type="button" onclick="cambiarColor()">Cambia color</button>
+
+</body>
+</html>

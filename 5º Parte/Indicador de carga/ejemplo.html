@@ -1,0 +1,59 @@
+	
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title> Cargando</title>
+	<style>
+		#myDiv {
+			width: 300px;
+			height:50px;
+			border:1px solid black;
+			overflow:hidden;
+		}
+	</style>
+	<script type="text/javascript">
+		function llamada(){
+			var conexion=new XMLHttpRequest();
+//antes de hacer la petición al servidor, mostramos la imagen
+muestra();
+//ya podemos hacer la petición ajax. En este ejemplo al archivo envia.php
+conexion.open("GET", "envia.php",true);
+
+conexion.onreadystatechange=function(){
+	
+	if (conexion.readyState==4 && conexion.status==200) {
+//en el momento que tenemos la respuesta del servidor ocultamos la imagen y mostramos la respuesta
+oculta();
+document.getElementById("myDiv").innerHTML=conexion.responseText;
+}
+};
+conexion.send();
+}
+
+function muestra(){
+//Función para mostrar el div que contiene la imagen Loading
+div = document.getElementById('myDivLoading');
+div.style.display = 'block';
+}
+
+function oculta(){
+//Función para ocultar el div que contiene la imagen Loading
+div = document.getElementById('myDivLoading');
+div.style.display = 'none';
+}
+
+window.onload=function(){
+	oculta();
+};
+</script>
+</head>
+<body>
+	
+	<input type="button" value="Hacer algo" onclick="llamada()"/>
+	<div id="myDivLoading">
+		<img src="ajax-loader.gif" />
+	</div>
+	<div id="myDiv">
+	</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+</head>
+<body>
+	<input value="OK">
+	<p id="demo">Pincha en el botón para establecer el atributo type en el botón de abajo.</p>
+	<button onclick="myFunction()">Prueba</button>
+	<script>
+	var flag = true;
+		function myFunction() {
+			if(flag) {
+				document.getElementsByTagName("input")[0].setAttribute("type", "button");
+				// otra forma
+				// document.getElementsByTagName("input")[0].type = "button";
+			}
+			else {
+				document.getElementsByTagName("input")[0].setAttribute("type", "text");
+			}
+			flag = !flag;
+		}
+	</script>
+</body>
+</html>

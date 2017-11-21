@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+</head>
+<body>
+	<p id="p1"> Esto es un texto. Esto es un texto. Esto es un texto. Esto es un texto. Esto es un texto. Esto es un texto</p>
+	<input type="button" value="Oculta el texto" onclick="document.getElementById('p1').style.visibility = 'hidden'" />
+	<input type="button" value="Muestra el texto" onclick="document.getElementById('p1').style.visibility = 'visible'" />
+	<!-- Con visibility, el texto no se muestra pero sigue ocupando espacio -->
+
+	<input type="button" value="Oculta el texto con display" onclick="document.getElementById('p1').style.display = 'none'" />
+	<input type="button" value="Muestra el texto con display" onclick="document.getElementById('p1').style.display = 'block'" />
+	<!-- Con display, el texto no se muestra y deja de ocupar espacio -->
+</body>
+</html>

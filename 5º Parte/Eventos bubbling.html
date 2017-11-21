@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+  "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+  <style>
+
+    div { width: 80px; height: 80px; background: #abc;
+
+      border: 2px solid black; margin: 10px; float: left; }
+
+      div.rojo { border-color: red; }
+
+    </style>
+
+    <script>
+
+      $(document).ready(function(){
+
+        $("div").click(function(e){
+
+          $(this).next().toggle(1000);
+
+          // Cancelación de propagación de eventos bubbling en IE
+          if(!e) {
+            var e = window.event;
+            e.cancelBubble = true;
+          }
+          // Cancelación de propagación de eventos bubbling en el resto
+          if(e.stopPropagation) {
+            e.stopPropagation();
+          }
+        });
+
+        $("div:first").next().addClass("rojo");
+
+      });
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <div>Primer DIV</div>
+
+    <div>DIV hermano<div>DIV hijo</div><div>DIV hijo2</div></div>
+
+    <div>DIV hermano</div>
+
+    <div>DIV hermano</div>
+
+  </body>
+
+  </html>

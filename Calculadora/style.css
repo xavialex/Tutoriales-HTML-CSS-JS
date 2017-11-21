@@ -1,0 +1,31 @@
+Style.css 
+body {
+	font-family:Verdana, Arial, sans-serif;
+	background:#333;
+}
+#content {
+	width:400px;
+	margin:20px auto;
+	padding:5px 20px;
+	background:#fff;
+	border:1px solid #000;
+}
+#content h1 {
+	color:#333;
+}
+#calculadora_iva label {
+	display:block;
+	width:200px;
+	text-align:right;
+	padding-right:20px;
+	float:left;
+}
+#calculadora_iva input {
+	display:block;
+	float:left;
+	margin-right:10px;
+}
+#calculadora_iva br {
+	clear:left;
+	margin-bottom:10px;
+}

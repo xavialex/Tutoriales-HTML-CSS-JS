@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		document.write("<p>Hello world!</p>")
+	</script>
+	<noscript>
+		Lo sentimos, tu navegador no soporta JavaScript
+	</noscript>
+
+	<p id="demo">JavaScript puede reaccionar a eventos, como puede ser el click de un botón</p>
+	<script>
+		function myFunction() {
+			x=document.getElementById("demo"); // Encuentra el elemento
+			x.style.color="#ff0000"; // Cambia el estilo
+		}
+	</script>
+	<button type="button" onclick="myFunction()">Pincha!</button>
+
+</body>
+</html>

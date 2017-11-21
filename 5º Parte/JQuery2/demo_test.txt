@@ -1,0 +1,2 @@
+<h2>Aprendiendo JQUERY y AJAX</h2>
+<p id="p1">Esto es algo de texto en un párrafo</p>

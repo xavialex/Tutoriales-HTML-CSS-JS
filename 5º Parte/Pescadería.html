@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Pruebas de eventos</title>
+  <style>
+   *{
+    margin: 0px;
+    text-align: center;
+  }
+  #Pescadería{
+    width: 400px;
+    padding: 5px;
+    margin :auto;
+    margin-top: 20px;
+    background-color: #888;
+    overflow: auto;
+  }
+  li{
+   width: 175px;
+   background-color: #6ff;
+   list-style-type: none;
+   margin: 5px;
+   padding: 5px;
+   float: left;
+ }
+ ul{
+  background-color: #eee;
+  padding: 5px;
+  overflow: auto;
+
+}
+.bValor{
+  border: 1px outset black;
+  display: block;
+  margin: auto;
+}
+
+</style>
+<script src= "http://code.jquery.com/jquery-latest.js" ></script>
+<script>
+  var acumulado=0;
+  var letrero="Ver el precio";
+  $(document).ready(function(){
+    $(".precio").on({
+     "mouseenter" :  function(e){
+      var precio = $(this).closest('.precio').data('precio'); // Busca a partir de él mismo hacia sus antecesores el primero con atributo precio
+
+      $(this).text(precio + " clic = añadir");
+    },
+    "mouseleave" :  function(e){
+      $(this).text(letrero);
+    },
+    "click" :  function(e){
+      $(this).text(letrero);
+      var precio=parseInt($(this).closest('.precio').data('precio').substr(0,2));
+      var acumulado=parseInt($(".total").text());
+      $(".total").text(precio + acumulado);
+    }
+      },"button" //solo si se produce sobre un botón
+      );
+  }); 
+</script>
+
+</head>
+<body>
+ <div id="Pescadería">
+  <h1>Pescadería "La red"</h1>
+  <ul>
+    <li class="precio" data-precio="6 €/Kg">
+     <h2>Sardina</h2>
+     <span class="detalle">Sardina pilchardus</span>
+     <button class="bValor">Ver el precio</button>
+   </li>
+   <li class="precio" data-precio="18 €/Kg">
+     <h2>Atún</h2>
+     <span class="detalle">Thunnus thynnus</span>
+     <button class="bValor">Ver el precio</button>
+   </li>
+   <li class="precio" data-precio="17 €/Kg">
+     <h2>Pez espada</h2>
+     <span class="detalle">Xiphias gladius</span>
+     <button class="bValor">Ver el precio</button>
+   </li>
+   <li class="precio" data-precio="22 €/Kg">
+     <h2>Mero</h2>
+     <span class="detalle">Epinephelus spp</span>
+     <button class="bValor">Ver el precio</button>
+   </li>
+   <li class="precio" data-precio="12 €/Kg">
+     <h2>Merluza</h2>
+     <span class="detalle">Merluccius merluccius</span>
+     <button class="bValor">Ver el precio</button>
+   </li>
+   <li class="compra" data-compra=0>
+     <h2>Monto</h2>
+     <span class="detalle">Total en €</span>
+     <div class="total">0</div>
+   </li>
+ </ul>
+</div>
+</body>
+</html>

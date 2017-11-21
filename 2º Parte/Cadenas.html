@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+</head>
+<body>
+	<p> Haz click en el botón para reemplazar "blue" por "red" :</p>
+	<p id="demo">Mr blue has a blue house and a blue car.</p>
+	<button onclick="myFunction()">Pincha</button>
+	<script>
+		var cadena="Hola mundo", i=0;
+		//document.write("<strong>");
+		// while(i<cadena.length && cadena[i]!=" ") {
+		// 	document.write(cadena[i]);
+		// 	i++;
+		// }
+		// document.write("</strong>");
+		// while(i<cadena.length) {
+		// 	document.write(cadena[i]);
+		// 	i++;
+		// }
+
+		document.write("<br/>");
+		var primerapalabra, espacio, restotexto;
+		espacio = cadena.indexOf(" ");
+		primerapalabra = cadena.substring(0, espacio);
+		restotexto = cadena.substring(espacio);
+		document.write(primerapalabra.bold());
+		document.write(restotexto);
+		document.write("<br/>");
+
+		var str = "How are you doing today?";
+		var n = str.split(" ");
+		for(var i=0;i<n.length;i++) {
+			document.write(n[i] + "<br/>");
+		}
+
+		function myFunction() {
+			var str = document.getElementById("demo").innerHTML;
+			var n = str.replace(/blue/g, "red"); // Entre / aparece la expresión regular a buscar, y con la g hace referenia a todas las posibles repeticiones que haya
+			document.getElementById("demo").innerHTML = n;
+		}
+
+
+	</script>
+
+</body>
+</html>

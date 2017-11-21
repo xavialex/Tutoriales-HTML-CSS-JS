@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+</head>
+<body>
+	<script>
+		function escribeAlgo() {
+			// Crear nodo del tipo Element
+			var parrafo = document.createElement("p");
+			// Crear nodo del tipo Text
+			var contenido = document.createTextNode("Hola Mundo!");
+			// Añadir el nodo Text como hijo del nodo Element
+			parrafo.appendChild(contenido);
+			// Añadir el nodo Element como hijo de la página
+			document.body.appendChild(parrafo);
+		}
+	</script>
+	<button type="button" onclick="escribeAlgo()">Pincha</button>
+
+</body>
+</html>

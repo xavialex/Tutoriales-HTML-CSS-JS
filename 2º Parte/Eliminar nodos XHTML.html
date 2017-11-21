@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+</head>
+<body>
+	<div id="div1">
+		<p id="p1">Esto es un párrafo</p>
+		<p id="p2">Esto es otro párrafo</p>
+	</div>
+	<script>
+		function Elimina() {
+			var child = document.getElementById("p1");
+			child.parentNode.removeChild(child);
+		}
+	</script>
+	<button type="button" onclick="Elimina()">Pincha</button>
+
+</body>
+</html>
